@@ -1,8 +1,8 @@
 "use client";
 
-// import Link from "next/link"
+import NextLink from 'next/link';
 import { usePathname } from "next/navigation"
-import { Box, Link } from "@mui/material"
+import { Box, Link as MuiLink } from "@mui/material"
 
 
 import { i18n } from "@/i18.config"
@@ -22,9 +22,9 @@ export default function LocaleSwitcher() {
       {i18n.locales.map(locale => {
         return (
           <Box key={locale} >
-            <Link href={redirectedPathName(locale)} underline="none" sx={{ color:'white'}}>
+            <MuiLink href={redirectedPathName(locale)} component={NextLink} underline="none" sx={{ color:'white'}}>
               {locale === "en" ? "En | "  :   locale === "fa" ? " FA" : null}
-            </Link>
+            </MuiLink>
           </Box>
         )
       })}

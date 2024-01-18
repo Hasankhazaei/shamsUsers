@@ -3,7 +3,7 @@
 import { getDictionary } from "@/app/lib/dictionary"
 import { Box, Typography } from "@mui/material"
 
-export default async function About({ params: { lang } }) {
+export default async function About({params :{ lang }}) {
   const { page } = await getDictionary(lang)
 
   return (

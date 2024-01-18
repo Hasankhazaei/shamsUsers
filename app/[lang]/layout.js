@@ -1,8 +1,9 @@
 import "@/app/globals.css"
-import { i18n } from "../../i18.config"
-import Header from "./components/Header"
-
+import { i18n } from "@/i18.config"
+import Header from "@/app/[lang]/components/Header"
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { Inter } from "next/font/google"
+import Menu from "@/app/[lang]/menu/page";
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
@@ -14,12 +15,15 @@ export async function generateStaticParams() {
   return i18n.locales.map(locale => ({ lang: locale }))
 }
 
-export default function  RootLayout({ children, params }) {
+export default function RootLayout({ children, params }) {
   return (
     <html lang={params.lang} dir={params.lang === "fa" ? "rtl" : "ltr"}>
       <body className={inter.className}>
-        <Header lang={params.lang} />
-        <main>{children}</main>
+        <AppRouterCacheProvider>
+          <Header lang={params.lang} />
+          <Menu lang={params.lang} />
+          {children}
+        </AppRouterCacheProvider>
       </body>
     </html>
   )

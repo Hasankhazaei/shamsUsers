@@ -11,6 +11,12 @@
       "about": {
         "title": "About Us",
         "description": "This is the about page"
+      },
+      "menu": {
+        "menClothing":"men's clothing",
+        "womenClothing":"women's clothing",
+        "jewelery":"jewelery",
+        "electronics":"electronics"
       }
     }
   }

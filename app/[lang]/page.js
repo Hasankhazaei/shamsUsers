@@ -1,7 +1,7 @@
-import { getDictionary } from "@/app/lib/dictionary"
+import  {getDictionary}  from "@/app/lib/dictionary"
 import { Box, Typography } from "@mui/material"
 
-export default async function Home({ params: { lang } }) {
+export default async function Home({params :{ lang }}) {
   const { page } = await getDictionary(lang)
 
   return (

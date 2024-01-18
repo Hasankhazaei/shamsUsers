@@ -1,6 +1,6 @@
 {
     "navigation": {
-      "home": "خانه",
+      "home": "خانه ",
       "about": "درباره "
     },
     "page": {
@@ -11,6 +11,12 @@
       "about": {
         "title": "درباره ما",
         "description": "این صفحه درباره است"
+      },
+      "menu": {
+        "menClothing": "لباس مردانه",
+        "womenClothing": "لباس زنانه",
+        "jewelery":"جواهرات",
+        "electronics":"الکترونیک"
       }
     }
   }
